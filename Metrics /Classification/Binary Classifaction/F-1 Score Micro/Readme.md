@@ -6,4 +6,5 @@ One advantage of using the F1 Score Micro is that it can be particularly useful 
 
 Overall, the F1 Score Micro is a useful metric for evaluating the performance of machine learning models on imbalanced datasets, particularly when there is a large class imbalance or when the majority class dominates the dataset.
 
-$$f1_-score_-1 = \frac {True_-Positive}{True_-Positive + \frac {1}{2}(False_-Positive + False_-Negative)}$$ $$f1_-score_-0 = \frac {True_-Negative}{True_-Negative + \frac {1}{2}(False_-Positive + False_-Negative)}$$
+$$f1_-score_-1 = \frac {True_-Positive}{True_-Positive + \frac {1}{2}(False_-Positive + False_-Negative)}$$ 
+$$f1_-score_-0 = \frac {True_-Negative}{True_-Negative + \frac {1}{2}(False_-Positive + False_-Negative)}$$
