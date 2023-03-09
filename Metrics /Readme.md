@@ -16,6 +16,7 @@ In summary, metrics are an essential part of machine learning, and they are used
 * * Accurcay Score
 * * Balanced Accuracy Score
 * * Top K Accuracy
+* * F-1 Score Normal
 ****
 **Modules Used**
 * Numpy
