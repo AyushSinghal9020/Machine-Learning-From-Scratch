@@ -6,4 +6,4 @@ The F-1 score combines precision and recall into a single metric that represents
 
 The F-1 score is particularly useful when the distribution of positive and negative instances in the dataset is imbalanced, as it takes into account both false positives and false negatives.
 
-Overall, the F-1 score is a useful metric for evaluating binary classification models, especially when the balance of positive and negative instances in the dataset is uneven. $$f1_-Score = \frac {2}{\frac {1}[recall} + \frac {1}{precision}}$$
+Overall, the F-1 score is a useful metric for evaluating binary classification models, especially when the balance of positive and negative instances in the dataset is uneven. $$f1_-Score = \frac {2}{\frac {1}{recall} + \frac {1}{precision}}$$
