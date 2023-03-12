@@ -5,10 +5,4 @@ There are several types of category coding techniques such as one-hot coding, or
 
 Categorical coding is important because many machine learning algorithms require numerical data as input. Transforming categorical data into numerical data makes it easier to process and analyze, and machine learning models can be trained to make predictions based on this data. 
 
-**Modules Used**
-* Numpy 
-* Pandas 
 
-**Note**
-* Pandas is only used to access the dataset at various levels
-* The dataset used it [this ](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data)
