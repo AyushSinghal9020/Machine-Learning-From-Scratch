@@ -52,3 +52,5 @@ elif len(sample_data.shape) != 1:
         output_array = np.hstack([output_array , output])
 
         output_array = np.delete(output_array , 0 , 1)
+  
+  return output_array  
