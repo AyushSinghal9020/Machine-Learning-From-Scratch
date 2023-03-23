@@ -1,3 +1,5 @@
+import numpy as np
+
 def log_output(value):
     return np.log1p(value)
 
