@@ -1,3 +1,5 @@
+import numpy as np 
+
 def cross_validation(model , dataframe , target , metric , times = 10):
     lis = []
     
@@ -18,4 +20,4 @@ def cross_validation(model , dataframe , target , metric , times = 10):
         model.fit(X_train , Y_train)
         lis.append(metric(Y_test , model.predict(X_test))) 
 
-    return lis  
+    return np.array(lis).mean()  
