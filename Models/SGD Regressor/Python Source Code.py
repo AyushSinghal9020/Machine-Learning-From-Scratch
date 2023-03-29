@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np 
 
 def SGD(X_train , Y_train , epochs = 100 , lr = 0.01):
     
@@ -23,7 +23,7 @@ def SGD(X_train , Y_train , epochs = 100 , lr = 0.01):
     
     def forward(X_train , Y_train , epochs , lr):
     
-        initialize(number_of_features)
+        initialize(len(X_train.columns))
     
         for _ in range(epochs):
     
