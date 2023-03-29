@@ -1,3 +1,5 @@
+import numpy as np
+
 def SGD(X_train , Y_train , epochs = 100 , lr = 0.01):
     
     def initialize(number_of_features):
