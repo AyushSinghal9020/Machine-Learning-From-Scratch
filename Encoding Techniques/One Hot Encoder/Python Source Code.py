@@ -1,4 +1,8 @@
 def sample_func(dataframe , columns , min_frequency = None , dtype = float):
+    if type(min_frquency) == int:
+        pass
+    else : 
+        min_frequnecy *= len(columns)
 
     if not min_frequency == None:
     
