@@ -1,3 +1,5 @@
+squared_mean = lambda predictions , actuals : np.sum((predictions - actual) ** 2)
+
 def SGDRegressor(X , y):
     
     weights = abs(np.random.randn(X.shape[0]))
@@ -10,7 +12,7 @@ def SGDRegressor(X , y):
     
         pred = weights * features + biases
         
-        loss = np.sum((pred - y) ** 2)
+        loss = squared_mean(pred , y)
         losses.append(loss)
         
         weights -= -2 * loss * 0.01
