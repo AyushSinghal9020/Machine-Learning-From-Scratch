@@ -31,7 +31,9 @@ def SGDRegressor(X , y ,
     losses = []
     
     for epochs in range(max_iter):
+        
         if shuffle :
+        
             X = np.random.shuffle(x)
     
         pred = weights * X + biases
@@ -47,12 +49,19 @@ def SGDRegressor(X , y ,
         else :
         
             loss = epsilon_intensie(pred , y , epsilon)
+        
         losses.append(loss)
+        
         if early_stopping: 
+            
             if losses[epochs] == losses[epochs - 1]:
+                
                 break
+        
         weights -= -2 * loss * alpha
+        
         if fit_intercept:
+            
             biases -= -2 * 30 * loss * alpha
 
     return weights , biases
