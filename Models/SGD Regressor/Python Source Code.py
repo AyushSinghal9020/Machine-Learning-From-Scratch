@@ -21,7 +21,7 @@ epsilon_intensive = lambda predictions , actuals , epsilon : np.where((predictio
 def SGDRegressor(X , y , 
                  loss_type = "sqaured_mean" , delta = 0.2 , 
                  epsilon = 0 , alpha = 0.0001 , 
-                fit_intercept = True):
+                fit_intercept = True , max_iter = 1000):
     
     weights = np.zeors(shape = X.shape[0])
     biases = np.zeors(1)
@@ -29,7 +29,7 @@ def SGDRegressor(X , y ,
     predic = []
     losses = []
     
-    for _ in range(300):
+    for _ in range(max_iter):
     
         pred = weights * features + biases
     
