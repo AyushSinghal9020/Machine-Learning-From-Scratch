@@ -18,10 +18,13 @@ def huber_loss(prediction , actuals , delta):
 
 epsilon_intensive = lambda predictions , actuals , epsilon : np.where((predictions - actuals) < epsilon , 0 , (predictions - actuals))
 
-def SGDRegressor(X , y , loss_type = "sqaured_mean" , delta = 0.2 , epsilon = 0 , alpha = 0.0001):
+def SGDRegressor(X , y , 
+                 loss_type = "sqaured_mean" , delta = 0.2 , 
+                 epsilon = 0 , alpha = 0.0001 , 
+                fit_intercept = True):
     
-    weights = abs(np.random.randn(X.shape[0]))
-    biases = abs(np.random.randn(1))
+    weights = np.zeors(shape = X.shape[0])
+    biases = np.zeors(1)
     
     predic = []
     losses = []
@@ -44,6 +47,7 @@ def SGDRegressor(X , y , loss_type = "sqaured_mean" , delta = 0.2 , epsilon = 0 
         losses.append(loss)
         
         weights -= -2 * loss * alpha
-        biases -= -2 * 30 * loss * alpha
+        if fit_intercept:
+            biases -= -2 * 30 * loss * alpha
 
     return weights , biases
