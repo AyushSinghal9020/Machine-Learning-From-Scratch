@@ -1,6 +1,7 @@
+# From Scratch Using Numpy
+
 import numpy as np 
 
-# From Scratch Using Numpy
 squared_mean = lambda predictions , actuals : np.sum((predictions - actual) ** 2)
 
 def huber_loss(prediction , actuals , delta):
@@ -70,15 +71,37 @@ def SGDRegressor(X , y ,
     return weights , biases
 
 # From Scratch Using Pytorch
+
 import torch
 import torch.nn as nn
-def SGDR_pytorch(X , y):
-    model = nn.Linear(X.shape[0] , 1)
-    optimizer = torch.optim.SGD(model.parameters() , lr = 0.01)
-    sample_loss = MSELoss()
-    for _ in range(100):
+
+def SGDR_pytorch(X , y , loss = "MSE" , alpha = 0.01 , fit_intercept = True , max_iter = 1000):
+    
+    if fit_intercept:
+        
+        model = nn.Linear(X.shape[0] , 1 , bias = False)
+    
+    else :
+        
+        model = nn.Linear(X.shape[0] , 1)
+    
+    optimizer = torch.optim.SGD(model.parameters() , alpha)
+    
+    if loss == "MSE":
+        
+        sample_loss = MSELoss()
+    
+    else :
+        
+        sample_loss = HuberLoss()
+    
+    for _ in range(max_iter):
+        
         predicted = model(X)
+        
         loss = sample_loss(predicted , y)
+        
         loss.backward(retain_graph = True)
         optimizer.step()
-    return model().detach().numoy()
+
+        return model().detach().numoy()
