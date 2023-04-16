@@ -22,7 +22,7 @@ def SGDRegressor(X , y ,
                  loss_type = "sqaured_mean" , delta = 0.2 , 
                  epsilon = 0 , alpha = 0.0001 , 
                 fit_intercept = True , max_iter = 1000 , 
-                shuffle = False ):
+                shuffle = False , early_stopping = False):
     
     weights = np.zeors(shape = X.shape[0])
     biases = np.zeors(1)
@@ -30,7 +30,7 @@ def SGDRegressor(X , y ,
     predic = []
     losses = []
     
-    for _ in range(max_iter):
+    for epochs in range(max_iter):
         if shuffle :
             X = np.random.shuffle(x)
     
@@ -48,7 +48,9 @@ def SGDRegressor(X , y ,
         
             loss = epsilon_intensie(pred , y , epsilon)
         losses.append(loss)
-        
+        if early_stopping: 
+            if losses[epochs] == losses[epochs - 1]:
+                break
         weights -= -2 * loss * alpha
         if fit_intercept:
             biases -= -2 * 30 * loss * alpha
