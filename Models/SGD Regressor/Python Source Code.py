@@ -3,6 +3,7 @@ target = np.array([x for x in range(0 , 400 , 2)])
 weights = np.random.randn(1)
 biases = np.random.randn(1)
 pred = weights * 30 + biases
-loss = (pred - 60)
-weights -= (-2* (60 - weights*30 - biases)) * 0.001
-biases -= (2 * 30 * (60 - weights * 30 - biases)) * 0.01
+for _ in range(100):
+    weights -= -2 * loss * 0.01
+    biases -= -2 * 30 * loss * 0.01
+    loss = (60 - (weights * 30 + biases))
