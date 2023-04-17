@@ -11,3 +11,4 @@ biases = np.random.randn(1)
 pred = weights * 30 + biases
 loss = (pred - 60) + (1 * weights)
 weights -= ((-2* (60 - weights*30 - biases)) + 1) * 0.01
+biases -= (2 * 30 * (60 - weights * 30 - biases)) * 0.01
