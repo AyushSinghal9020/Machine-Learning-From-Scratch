@@ -8,3 +8,4 @@ for i in range(200):
 target = np.array(target)
 weights = np.random.randn(1)
 biases = np.random.randn(1)
+pred = weights * 30 + biases
