@@ -37,3 +37,15 @@ class LassoRegression:
                 biases -= -2 * loss * 0.01
 
         return weights , biases
+                        
+    def get_params(self , deep = True): 
+
+        if deep:
+
+            return weights_list , biases_list
+
+        else :
+
+            return weights , biases
+    
+        
