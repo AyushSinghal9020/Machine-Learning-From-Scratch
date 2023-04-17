@@ -1,7 +1,8 @@
-def RidgeRegression(X , y , alpha = 0.1):
+def RidgeRegression(X , y , 
+                    alpha = 0.1 , fit_intercept = True):
     
-    weights = np.random.randn(X.shape[0])
-    biases = np.random.randn(1)
+    weights = np.zeors(shape = X.shape[0])
+    biases = np.zeors(shape = 1)
     
     predic = []
     losses = []
@@ -14,6 +15,9 @@ def RidgeRegression(X , y , alpha = 0.1):
         losses.append(loss)
         
         weights -= ((-2* loss) + (2 * weights)) * 0.01
-        biases -= -2 * 30 * loss * 0.01
+        
+        if fit_intercept:
+            
+            biases -= -2 * 30 * loss * 0.01
 
     return weights , biases
