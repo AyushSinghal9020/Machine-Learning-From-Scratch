@@ -7,3 +7,4 @@ for i in range(200):
         target.append(i**(1/3))
 target = np.array(target)
 weights = np.random.randn(1)
+biases = np.random.randn(1)
