@@ -37,7 +37,7 @@ class SGDRegressor:
             
             if shuffle :
             
-                X = np.random.shuffle(x)
+                X = np.random.shuffle(X)
         
             pred = weights * X + biases
         
@@ -84,6 +84,13 @@ class SGDRegressor:
         else :
         
             return weights , biases
+    
+    def predict(self , x_test):
+        
+        predictions = [np.sum(weghts * x + biases) for x in X_test]
+        predictions = np.array(predictions)
+        
+        return predictions
 
     squared_mean = lambda predictions , actuals : np.sum((predictions - actual) ** 2)
 
