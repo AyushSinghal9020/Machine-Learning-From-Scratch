@@ -92,6 +92,33 @@ class SGDRegressor:
         
         return predictions
 
+    def score(X_test , Y_test , sample_weight = None):
+        
+        if sample_weight != None:
+    
+            if len(sampe_weight) != (X.shape[0] + 1):
+            
+                warnings.warn("Please use the correct shape of `sample_weights`. using `0` as the parameters!!")
+
+                weights = np.zeors(shape = X.shape[0])
+                biases = np.zeors(1)
+            
+            else : 
+                
+                weights , biases = sample_weight[:1] , sample_weight[0]
+
+        else : 
+
+            weights = np.zeors(shape = X.shape[0])
+            biases = np.zeors(1)
+        
+        params = np.vstack([biases , weights])
+        
+        score = 1 - ((np.sum(np.sqaure(Y_test - self.predict(X_test , sample_weight = params)))) / (np.sum(np.sqaure(Y_test - Y_test.mean()))))
+
+        return score
+        
+
     squared_mean = lambda predictions , actuals : np.sum((predictions - actual) ** 2)
 
     epsilon_intensive = lambda predictions , actuals , epsilon : np.where((predictions - actuals) < epsilon , 0 , (predictions - actuals))
@@ -111,7 +138,6 @@ class SGDRegressor:
                 loss += (delta * abs(pred - act)) - ((1 / 2) * (delta ** 2))
         
         return loss
-
 # From Scratch Using Pytorch
 
 import torch
