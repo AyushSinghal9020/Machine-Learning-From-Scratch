@@ -1,7 +1,8 @@
-def LassoRegression(X , y , alpha = 0.1):
+def LassoRegression(X , y , 
+                    alpha = 0.1 , fit_intercepts = True):
     
-    weights = np.random.randn(X.shape[0])
-    biases = np.random.randn(1)
+    weights = np.zeros(shape = X.shape[0])
+    biases = np.zeros(shape = (1))
     
     predic = []
     losses = []
@@ -14,6 +15,9 @@ def LassoRegression(X , y , alpha = 0.1):
         losses.append(loss)
         
         weights -= ((-2* loss) + alpha) * 0.01
-        biases -= -2 * loss * 0.01
+        
+        if fit_intercept:
+                      
+            biases -= -2 * loss * 0.01
 
     return weights , biases
