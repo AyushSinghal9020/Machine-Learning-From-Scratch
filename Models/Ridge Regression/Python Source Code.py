@@ -1,23 +1,39 @@
-def RidgeRegression(X , y , 
-                    alpha = 0.1 , fit_intercept = True):
+class RidgeRegression:
     
-    weights = np.zeors(shape = X.shape[0])
-    biases = np.zeors(shape = 1)
+    def __init__(self , X , y , 
+                    alpha = 0.1 , fit_intercept = True):pass
     
-    predic = []
-    losses = []
-    
-    for _ in range(300):
-    
-        pred = weights * features + biases
+    def fit(self , X , y , sample_weight): 
         
-        loss = np.sum((60 - (weights * 30 + biases)) + (alpha * (weights ** 2)))
-        losses.append(loss)
-        
-        weights -= ((-2* loss) + (2 * weights)) * 0.01
-        
-        if fit_intercept:
+        if sample_weight != None:
             
-            biases -= -2 * 30 * loss * 0.01
+            if len(sampe_weight) != (X.shape[0] + 1):
+            
+                warnings.warn("Please use the correct shape of `sample_weights`. using `0` as the parameters!!")
+            
+            else : 
+                
+                weights , biases = sample_weight[:1] , sample_weight[0]
+        
+        else : 
+        
+            weights = np.zeors(shape = X.shape[0])
+            biases = np.zeors(1)
+    
+        predic = []
+        losses = []
 
-    return weights , biases
+        for _ in range(300):
+
+            pred = weights * features + biases
+
+            loss = np.sum((60 - (weights * 30 + biases)) + (alpha * (weights ** 2)))
+            losses.append(loss)
+
+            weights -= ((-2* loss) + (2 * weights)) * 0.01
+
+            if fit_intercept:
+
+                biases -= -2 * 30 * loss * 0.01
+
+        return weights , biases
