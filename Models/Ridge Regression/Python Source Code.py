@@ -3,7 +3,7 @@ class RidgeRegression:
     def __init__(self , X , y , 
                     alpha = 0.1 , fit_intercept = True):pass
     
-    def fit(self , X , y , sample_weight): 
+    def fit(self, X , y , sample_weight): 
         
         if sample_weight != None:
             
@@ -37,3 +37,13 @@ class RidgeRegression:
                 biases -= -2 * 30 * loss * 0.01
 
         return weights , biases
+    
+    def get_params(self , deep = True): 
+        
+        if deep:
+            
+            return weights_list , biases_list
+        
+        else :
+        
+            return weights , biases
