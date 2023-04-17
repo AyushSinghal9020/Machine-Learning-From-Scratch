@@ -1,16 +1,13 @@
-features = np.array([x for x in range(0 , 200 , 1)])
-target = []
-for i in range(200):
-    if i < 26:
-        target.append(i**(1 / 2))
-    else :
-        target.append(i**(1/3))
-target = np.array(target)
-weights = abs(np.random.randn(1))
-biases = abs(np.random.randn(1))
-losses = []
-for _ in range(100):
-    weights -= ((-2* loss) + (2 * weights)) * 0.01
-    biases -= -2 * 30 * loss * 0.01
-    loss = (60 - (weights * 30 + biases)) + (weights ** 2)
-    losses.append(loss)
+def RidgeRegression():
+    weights = abs(np.random.randn(1))
+    biases = abs(np.random.randn(1))
+    predic = []
+    losses = []
+    for _ in range(300):
+        pred = weights * features + biases
+        loss = np.sum((60 - (weights * 30 + biases)) + (weights ** 2))
+        losses.append(loss)
+        weights -= ((-2* loss) + (2 * weights)) * 0.01
+        biases -= -2 * 30 * loss * 0.01
+
+    return weights , biases
