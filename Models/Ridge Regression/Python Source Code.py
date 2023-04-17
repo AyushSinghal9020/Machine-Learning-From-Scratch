@@ -54,3 +54,29 @@ class RidgeRegression:
         predictions = np.array(predictions)
         
         return predictions
+    
+    def score(X_test , Y_test , sample_weight = None):
+        
+        if sample_weight != None:
+    
+            if len(sampe_weight) != (X.shape[0] + 1):
+            
+                warnings.warn("Please use the correct shape of `sample_weights`. using `0` as the parameters!!")
+
+                weights = np.zeors(shape = X.shape[0])
+                biases = np.zeors(1)
+            
+            else : 
+                
+                weights , biases = sample_weight[:1] , sample_weight[0]
+
+        else : 
+
+            weights = np.zeors(shape = X.shape[0])
+            biases = np.zeors(1)
+        
+        params = np.vstack([biases , weights])
+        
+        score = 1 - ((np.sum(np.sqaure(Y_test - self.predict(X_test , sample_weight = params)))) / (np.sum(np.sqaure(Y_test - Y_test.mean()))))
+
+        return score
