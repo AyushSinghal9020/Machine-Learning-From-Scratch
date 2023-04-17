@@ -28,6 +28,8 @@ class SGDRegressor:
             weights = np.zeors(shape = X.shape[0])
             biases = np.zeors(1)
             
+        weights = []
+        biases = []
         predic = []
         losses = []
         
@@ -64,8 +66,24 @@ class SGDRegressor:
             if fit_intercept:
             
                 biases -= -2 * 30 * loss * alpha
+            
+            weights_list.append(weights)
+            biases_list.append(biases)
+        
+        weights_list = np.array(weights_list)
+        biases_list = np.array(biases_list)
 
         return weights , biases
+
+    def get_params(self , deep = True): 
+        
+        if deep:
+            
+            return weights_list , biases_list
+        
+        else :
+        
+            return weights , biases
 
     squared_mean = lambda predictions , actuals : np.sum((predictions - actual) ** 2)
 
