@@ -48,4 +48,9 @@ class LassoRegression:
 
             return weights , biases
     
+    def predict(self , x_test):
         
+        predictions = [np.sum(weghts * x + biases) for x in X_test]
+        predictions = np.array(predictions)
+        
+        return predictions
