@@ -6,3 +6,4 @@ for i in range(200):
     else :
         target.append(i**(1/3))
 target = np.array(target)
+weights = np.random.randn(1
