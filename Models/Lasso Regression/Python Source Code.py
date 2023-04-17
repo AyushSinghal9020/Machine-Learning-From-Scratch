@@ -6,10 +6,11 @@ for i in range(200):
     else :
         target.append(i**(1/3))
 target = np.array(target)
-weights = np.random.randn(1)
-biases = np.random.randn(1)
-pred = weights * 30 + biases
+weights = abs(np.random.randn(1))
+biases = abs(np.random.randn(1))
+losses = []
 for _ in range(100):
     weights -= ((-2* loss) + 1) * 0.01
     biases -= -2 * 30 * loss * 0.01
     loss = (60 - (weights * 30 + biases)) + (weights)
+    losses.append(loss)
