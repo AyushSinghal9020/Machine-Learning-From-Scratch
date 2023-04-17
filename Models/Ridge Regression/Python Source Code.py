@@ -1,4 +1,4 @@
-def RidgeRegression(X , y):
+def RidgeRegression(X , y , alpha = 0.1):
     
     weights = np.random.randn(X.shape[0])
     biases = np.random.randn(1)
@@ -10,7 +10,7 @@ def RidgeRegression(X , y):
     
         pred = weights * features + biases
         
-        loss = np.sum((60 - (weights * 30 + biases)) + (weights ** 2))
+        loss = np.sum((60 - (weights * 30 + biases)) + (alpha * (weights ** 2)))
         losses.append(loss)
         
         weights -= ((-2* loss) + (2 * weights)) * 0.01
