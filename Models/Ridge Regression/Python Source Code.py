@@ -80,3 +80,4 @@ class RidgeRegression:
         score = 1 - ((np.sum(np.sqaure(Y_test - self.predict(X_test , sample_weight = params)))) / (np.sum(np.sqaure(Y_test - Y_test.mean()))))
 
         return score
+        
