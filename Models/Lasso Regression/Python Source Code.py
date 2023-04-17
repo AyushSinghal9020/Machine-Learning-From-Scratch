@@ -1,4 +1,4 @@
-def LassoRegression(X , y):
+def LassoRegression(X , y , alpha = 0.1):
     
     weights = np.random.randn(X.shape[0])
     biases = np.random.randn(1)
@@ -10,10 +10,10 @@ def LassoRegression(X , y):
     
         pred = weights * features + biases
         
-        loss = np.sum((y - (weights * X + biases)) + (weights))
+        loss = np.sum((y - (weights * X + biases)) + (alpha * weights))
         losses.append(loss)
         
-        weights -= ((-2* loss) + 1) * 0.01
+        weights -= ((-2* loss) + alpha) * 0.01
         biases -= -2 * loss * 0.01
 
     return weights , biases
