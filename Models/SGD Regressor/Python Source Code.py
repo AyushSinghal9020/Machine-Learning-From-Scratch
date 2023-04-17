@@ -7,9 +7,14 @@ class SGDRegressor:
     def __init__(self , loss_type = "sqaured_mean" , delta = 0.2 , 
                  epsilon = 0 , alpha = 0.0001 , 
                 fit_intercept = True , max_iter = 1000 , 
-                shuffle = False , early_stopping = False):
+                shuffling = False , early_stopping = False):
         
-        pass
+        self.loss_type = loss_type
+        self.alpha = alpha
+        self.fit_intercept = fit_intercept
+        self.max_iter = max_iter
+        self.shuffling = shuffling
+        self.early_stopping = early_stopping
     
     def fit(self , X , y , sample_weight = None): 
     
@@ -33,19 +38,19 @@ class SGDRegressor:
         predic = []
         losses = []
         
-        for epochs in range(max_iter):
+        for epochs in range(self.max_iter):
             
-            if shuffle :
+            if self.shuffling :
             
                 X = np.random.shuffle(X)
         
             pred = weights * X + biases
         
-            if loss_type == "sqaured_mean":
+            if self.loss_type == "sqaured_mean":
             
                 loss = squared_mean(pred , y , delta)
             
-            elif loss_type == "huber" : 
+            elif self.loss_type == "huber" : 
                 
                 loss = huber(pred , y)
             
@@ -55,17 +60,17 @@ class SGDRegressor:
             
             losses.append(loss)
             
-            if early_stopping: 
+            if self.early_stopping: 
             
                 if losses[epochs] == losses[epochs - 1]:
             
                     break
             
-            weights -= -2 * loss * alpha
+            weights -= -2 * loss * self.alpha
             
-            if fit_intercept:
+            if self.fit_intercept:
             
-                biases -= -2 * 30 * loss * alpha
+                biases -= -2 * 30 * loss * self.alpha
             
             weights_list.append(weights)
             biases_list.append(biases)
@@ -116,7 +121,7 @@ class SGDRegressor:
         
         score = 1 - ((np.sum(np.sqaure(Y_test - self.predict(X_test , sample_weight = params)))) / (np.sum(np.sqaure(Y_test - Y_test.mean()))))
 
-        return score
+        return true
         
 
     squared_mean = lambda predictions , actuals : np.sum((predictions - actual) ** 2)
