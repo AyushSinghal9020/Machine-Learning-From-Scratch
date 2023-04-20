@@ -1,14 +1,13 @@
-import numpy as np
+def accuracy_score(actuals , predictions):
+    
+    correct_ones = 0
+    
+    for actual  , predicted in zip(actuals , predictions):
+        
+        if predicted == actual:
+            
+            correct_ones += 1
 
-def asc(actual , predictions):
-    true = 0
-    false = 0
-    for actuals  , predicted in zip(actual , predictions):
-        if predicted == actuals:
-            ture += 1
-        else :
-            false += 1
-
-    asc = true / (true + false)
+    asc = correct_ones / len(predictions)
 
     return asc
