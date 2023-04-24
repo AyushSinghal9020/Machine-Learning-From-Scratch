@@ -1,13 +1,19 @@
 def top_k_accuracy(actuals , predictions):
     
-    correct_ones = 0
+    k_labels = []
     
-    for actual  , predicted in zip(actuals , predictions):
+    for label in np.unique(pred):
         
-        if predicted == actual:
-            
-            correct_ones += 1
+        correct_ones = 0
 
-    asc = correct_ones / len(predictions)
+        for actual  , predicted in zip(actuals , predictions):
 
-    return asc
+            if predicted == label and actual == label:
+
+                correct_ones += 1
+
+        asc = correct_ones / len(predictions)
+        
+        k_labels.append(asc)
+
+    return k_labels 
