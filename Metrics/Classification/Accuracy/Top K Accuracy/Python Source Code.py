@@ -1,4 +1,4 @@
-def top_k_accuracy(actuals , predictions):
+def top_k_accuracy(actuals , predictions , k):
     
     k_labels = []
     
@@ -16,4 +16,6 @@ def top_k_accuracy(actuals , predictions):
         
         k_labels.append(asc)
 
-    return k_labels 
+    k_labels = np.array(k_labels)
+    
+    return k_labels[:k]    
