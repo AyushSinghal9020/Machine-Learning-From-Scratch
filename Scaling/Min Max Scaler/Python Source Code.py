@@ -1,41 +1,19 @@
-def min_max_scaler(array):
+def standard_scaler(array , copy = True):
     
-    scaled = np.array([])
-
-    for i in range(len(array.shape)) : 
-    
-        single_scaled = np.array([])
+    if copy:
         
-        if len(array.shape) == 1:
-                
-            if not (array.dtype == int or array.dtype == float) :
-
-                print(i , "th index was a categorical column, Please pass only numerical columns. ")
-                
-            else:    
-                
-                for j in array:
-                
-                    scale = (j - array[i].mean())/ (array[i].max() - array.min())
-
-                    single_scaled = np.hstack([single_scaled , scale])
-                    scaled = single_scaled
+        y = np.empty(shape = array.shape)
         
-        else:
+        for i,j in enumerate(array):
+            
+            y[i] = (j - array.mean()) / (array.std())
+        
+        return y
     
-            for j in array[i]:
-
-                if not (array[i].dtype == int or array[i].dtype == float) :
-
-                    print(i , "th index was a categorical column, Please pass only numerical columns. ")
-                    scaled = np.zeros(len(array[i]))
-
-                else:
-
-                    scale = (j - array[i].mean())/ (array[i].max() - array[i].min())
-
-                    single_scaled = np.hstack([single_scaled , scale])
-
-            scaled = np.vstack(scaled . single_scaled)
-
-    return scaled
+    else :
+        
+        for i,j in enumerate(array):
+            
+            array[i] = (j - array.mean()) / (array.std())
+        
+        return array
