@@ -1,4 +1,4 @@
-def accuracy_score(actuals , predictions):
+def top_k_accuracy(actuals , predictions):
     
     correct_ones = 0
     
