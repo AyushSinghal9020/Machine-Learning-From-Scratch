@@ -4,4 +4,4 @@ Scaling in machine learning refers to the process of transforming the input feat
 
 Common scaling techniques include standardization, in which features are transformed to have zero mean and unit variance, and normalization, in which features are transformed to have a range of values between 0 and 1. Other techniques include logarithmic scaling and min-max scaling. Scaling is an important step in machine learning preprocessing and can improve the accuracy and performance of many machine learning algorithms. Scaling the input features allows the algorithm to treat each feature equally, avoiding dominance or bias that might otherwise occur. 
 
-Here we will try to make our own scaling techniques
+**Data - [Kaggle](https://www.kaggle.com/)=>[AyushS9020](https://www.kaggle.com/ayushs9020)=>[Sample_Data](https://www.kaggle.com/datasets/ayushs9020/sample-data)=>[Sample_Data_1](https://www.kaggle.com/datasets/ayushs9020/sample-data)**
