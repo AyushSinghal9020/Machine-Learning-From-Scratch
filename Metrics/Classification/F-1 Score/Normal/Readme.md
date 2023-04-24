@@ -5,3 +5,6 @@ The F1 score ranges from 0 to 1, with 1 being the best possible score. A score o
 The F1 score is a useful metric to evaluate a model's performance, especially when the classes are imbalanced. It is often used in combination with other metrics, such as accuracy, precision, and recall, to provide a more comprehensive view of a model's performance.
 
 In summary, "F-1 Score Normal" is not a commonly used term in data science, and there is no known definition or explanation for it.
+****
+$$\frac {1}{\frac {1}{Precision} + \frac {1}{Recall}}$$
+****
