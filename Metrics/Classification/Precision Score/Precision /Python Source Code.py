@@ -1,4 +1,4 @@
-def top_k_accuracy(actuals , predictions , k):
+def precision(actuals , predictions , k):
     
     k_labels = []
     
