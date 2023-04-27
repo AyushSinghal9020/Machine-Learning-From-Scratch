@@ -6,4 +6,6 @@ Unlike the regular accuracy score, which can be misleading when dealing with imb
 The balanced accuracy score ranges from 0 to 1, where a score of 0 indicates a completely random classifier, and a score of 1 indicates a perfect classifier. A score of 0.5 indicates a classifier that performs no better than random chance.
 
 Overall, the balanced accuracy score is a useful tool for evaluating the performance of classifiers in situations where the class distribution is imbalanced.
+****
 $$balanced_-accuracy_-score = \frac {sensitivity + specifictiy}{2}$$
+****
