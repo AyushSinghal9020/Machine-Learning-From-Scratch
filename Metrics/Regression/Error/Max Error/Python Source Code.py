@@ -1,5 +1,11 @@
-error = 0
-for x , y in zip(winning_speed , your_speed):
-    if error < x - y:
-        error = x-y
-error
+def max_error(actuals , predictions):
+    
+    error = 0
+    
+    for prediction , actual in zip(predictions , actuals):
+        
+        if error < actual - prediction:
+            
+            error = actual - prediction
+    
+    return error
