@@ -20,6 +20,20 @@ class DecisionTree:
         
     def fit(self , X , y):pass
     
+    def _information_gain(self, y, X_column, threshold):
+
+        parent_entropy = self._entropy(y)
+
+        left_idxs, right_idxs = self._split(X_column, threshold)
+
+        if len(left_idxs) == 0 or len(right_idxs) == 0:
+            return 0
+
+        child_entropy = (len(left_idxs)/len(y)) * (self.entropy(y[left_idxs])) + (len(right_idxs)/len(y)) * (self._entropy(y[right_idxs]))
+
+        information_gain = parent_entropy - child_entropy
+        return information_gain
+    
     entropy = lambda self , y : -np.sum(np.array([p * np.log(p)
                                                  for p in (np.bincount(y) / len(y))]))
     
