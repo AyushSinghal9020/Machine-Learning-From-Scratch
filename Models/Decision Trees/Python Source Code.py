@@ -23,4 +23,11 @@ class DecisionTree:
     entropy = lambda self , y : -np.sum(np.array([p * np.log(p)
                                                  for p in (np.bincount(y) / len(y))]))
     
+    def split(self, X_column, split_thresh):
+        
+        left = np.argwhere(X_column <= split_thresh).flatten()
+        right = np.argwhere(X_column > split_thresh).flatten()
+        
+        return left , right
+    
     def predict(self , X):pass
