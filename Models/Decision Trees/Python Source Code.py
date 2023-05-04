@@ -9,4 +9,6 @@ class Node:
     def is_leaf_node(self):
         return self.value is not None
 
-  class DecisionTree:pass 
+class DecisionTree:
+    def __init__(self, max_depth = 100):
+        self.max_depth = max_depth
