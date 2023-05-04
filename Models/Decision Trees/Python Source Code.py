@@ -20,6 +20,26 @@ class DecisionTree:
         
     def fit(self , X , y):pass
     
+    def _best_split(self, X, y, feat_idxs):
+        
+        best_gain = -1
+        split_idx, split_threshold = None, None
+
+        for feat_idx in feat_idxs:
+            X_column = X[:, feat_idx]
+            thresholds = np.unique(X_column)
+
+            for thr in thresholds:
+                
+                gain = self._information_gain(y, X_column, thr)
+
+                if gain > best_gain:
+                    best_gain = gain
+                    split_idx = feat_idx
+                    split_threshold = thr
+
+        return split_idx, split_threshold
+    
     def _information_gain(self, y, X_column, threshold):
 
         parent_entropy = self._entropy(y)
