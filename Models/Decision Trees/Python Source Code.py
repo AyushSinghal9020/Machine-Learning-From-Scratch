@@ -17,3 +17,6 @@ class DecisionTree:
         self.max_depth=max_depth
         self.n_features=n_features
         self.root=None
+        
+    def fit(self , X , y):pass
+    def predict(self , X):pass
