@@ -8,7 +8,9 @@ MI values range from 0 to a maximum value that depends on the range and distribu
 
 MI is a useful tool in machine learning because it is model-agnostic, meaning it can be used with any type of model or data. However, it may not capture all types of dependencies between variables, such as nonlinear relationships or interactions between multiple variables.
 
-$$I(X;Y) = \sum\limits_{y = 1}^{n}\sum\limits _{x = 1}^{n} ._{P(X , Y)}(x , y)log(\frac {_{P_{(X, Y)}}(x , y)}{_{P_X}(x) _{P_Y}(y)})$$$$= \sum\limits_{y = 1}^{n}\sum\limits _{x = 1}^{n} ._{P_{X|Y-_{y}}}(x)_{P_{Y}}log\frac {_{P_{X|Y-_{y}}}(x)_{P_{Y}}(y)}{_{P_{X}}(x)_{P_{Y}}(y)}$$$$= \sum\limits_{y = 1}^{n}._{P_{Y}}(y)\sum\limits_{x = 1}^{n}._{P_{X|Y-_{y}}}log\frac{_{P_{X|Y-_{y}}}(x)}{_{P_{X}}(x)}$$$$= \sum\limits_{y = 1}^{n}._{P_{Y}}(y)D_{KL}(_{P_{X|Y=_{y}}||P_{X}})$$$$= E_Y[D_{KL}(_{P_{X|Y=_{y}}||P_{X}})]$$$$= \sum\limits_{x = 1}^{n}\sum\limits_{y = 1}^{n}._{P}(x , y)log\Bigg[\frac{_{P}(x , y)}{_P(x)_P{y}}\Bigg]$$
+****
+$$$$= \sum\limits_{x = 1}^{n}\sum\limits_{y = 1}^{n}.{P}(x , y)log\Bigg[\frac{{P}(x , y)}{_P(x)_P{y}}\Bigg]$$
+****
 
 **Note** 
 * This notebook is higly inspired from the [Youtube Video](https://www.youtube.com/watch?v=eJIp_mgVLwE), kudos to the person for being a great teacher
