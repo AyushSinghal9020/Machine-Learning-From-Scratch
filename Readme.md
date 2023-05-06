@@ -1,5 +1,5 @@
-This repo is an attempt to make machine learning more grounded. Starting with basics and creating advanced level code is the motive behind this repo
-|Techinques|_____________________||________________________||
+This repo is an attempt to make machine learning more grounded. Starting with basics and creating advanced level mathamatical , and understanding the mathematics behing these models in deep, not just making them, but trying to invent them again is the motive behind this repo
+|____________|_____________________||________________________||
 |---|---|---|---|---
 |Models|Decision Trees|
 ||Random Forest|
