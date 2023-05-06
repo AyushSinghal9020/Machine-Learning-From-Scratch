@@ -1,7 +1,7 @@
+<a href="https://www.kaggle.com/code/ayushs9020/metrics-from-scratch"><img src = "https://cdn.iconscout.com/icon/free/png-256/free-kaggle-3521526-2945029.png" width = 50>
+
 # Metrics
 Metrics in machine learning refer to the quantitative measurements used to evaluate the performance of a model. Metrics can be used to assess different aspects of a model's performance, such as accuracy, precision, recall, F1-score, AUC-ROC, and others. Choosing the right metrics for a given problem is important to ensure that the model's performance is appropriately evaluated and improved.
-
-<img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6F58yqU8uacM3fV56Thy1CGgc-qRTBWocOA&usqp=CAU">
 
 |Metrics|Types|Further Types|Formula
 |---|---|---|---|
