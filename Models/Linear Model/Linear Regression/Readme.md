@@ -6,4 +6,4 @@ Linear regression is a fundamental and widely used statistical technique in mach
 
 Linear regression can be used for various purposes, including prediction, inference, and understanding the relationship between variables. It is widely applied in fields such as economics, finance, social sciences, and engineering. Additionally, it serves as the foundation for more complex regression techniques and is often used as a benchmark for evaluating the performance of other ML models. While linear regression is a powerful tool, it has certain assumptions and limitations. It assumes a linear relationship between the variables and may not be suitable for modeling complex non-linear relationships. Additionally, it is sensitive to outliers and can be affected by multicollinearity (high correlation) among the independent variables.
  
- $$\beta = [(X^TX)^{-1}]^TX^TY$
+ $$\beta = [(X^TX)^{-1}]^TX^TY$$
