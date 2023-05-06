@@ -1,16 +1,7 @@
+<a href="https://www.kaggle.com/code/ayushs9020/one-hot-encoder-from-scratch"><img src = "https://cdn.iconscout.com/icon/free/png-256/free-kaggle-3521526-2945029.png" width = 50>
+
 # One Hot Encoding 
 
-One Hot Encoding is a popular technique used for categorical coding in machine learning. Convert a categorical variable to a binary format that can be used as input for a machine learning model.
+One Hot Encoder is a popular technique used in machine learning and data preprocessing to convert categorical variables into a numerical representation that can be easily understood and processed by machine learning algorithms. It is particularly useful when dealing with categorical data that cannot be directly used in mathematical models. In many machine learning algorithms, variables need to be in a numerical format to perform computations and make predictions. However, categorical variables, such as colors, types, or categories, are non-numeric in nature and cannot be directly used. One Hot Encoder solves this problem by transforming categorical variables into a binary representation. The process of One Hot Encoding involves creating new binary columns, also known as dummy variables, based on the unique categories present in the original categorical variable. For each unique category, a new binary column is created. The value '1' is assigned to the corresponding column if the observation belongs to that category, and '0' is assigned if it does not.
 
-This technique creates a separate binary feature for each category of a categorical variable. Each binary feature represents whether a category exists in the original data. For example, if you have three categories, A, B, and C, three binary features will be created, one for each category. If a data point belongs to category A, the category A binary characteristic has the value 1 and the categories B and C binary characteristics have the value 0.
-
-One Hot Encoding is especially useful for nominal categorical variables that have no category-specific ordering. This technique ensures that machine learning models do not interpret the numbers associated with categories as having any inherent meaning or order.
-
-The drawback of One Hot Encoding is that datasets with many categories have a large number of features, which can lead to computational resource problems and overfitting. Therefore, it is important to carefully consider using One Hot Encoding and use other techniques such as feature selection and dimensionality reduction if necessary. 
-**Modules Used**
-* Numpy 
-* Pandas 
-
-**Note**
-* Pandas is only used to access the dataset at various levels
-* The dataset used it [this ](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data)
+By using this technique, each category becomes a separate feature, and the presence or absence of a category is indicated by the values '1' or '0', respectively. This representation allows machine learning algorithms to consider the categories as separate entities without imposing any ordinal relationship or numerical value on them. One Hot Encoding is commonly implemented in programming languages and libraries such as Python's scikit-learn or TensorFlow, where it is easily accessible and can be applied to datasets with categorical variables. It is crucial to apply One Hot Encoding before feeding the data into machine learning algorithms to ensure that the categorical information is properly represented and utilized in the model. One potential issue with One Hot Encoding is the introduction of high-dimensional data when dealing with categorical variables with a large number of unique categories. This can lead to the curse of dimensionality, where the number of features exceeds the available data points, potentially affecting the performance of the model. In such cases, feature selection or dimensionality reduction techniques may be applied to mitigate this issue.
