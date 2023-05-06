@@ -1,14 +1,14 @@
 This repo is an attempt to make machine learning more grounded. Starting with basics and creating advanced level mathamatical algorithms , understanding the mathematics behing these models in deep, not just making them, but trying to invent them again is the motive behind this repo
 |____________|_____________________||________________________||
 |---|---|---|---|---
-|Models|Decision Trees|
-||Random Forest|
-||Gaussian Naive Bayes|
-||K Nearest Neighbors
-||Lasso Regression
-||Linear Regression
-||Ridge Regression|
-||SGD Regressor|
+|Models|Trees|Decision Trees|
+||Ensemble|Random Forest|
+||Naive Bayes|Gaussian Naive Bayes|
+||Neighbors|K Nearest Neighbors
+||Linear Model|Lasso
+|||Linear Regression
+|||Ridge
+|||SGD Regressor|
 |Metrics|Classification|Accuracy|Accuracy Score|$$\frac {T_P + T_N}{T_P + T_N + F_P + F_N}$$
 ||||Balanced Accuracy Score|$$\frac {sensitivity + specifictiy}{2}$$
 ||||Top K Accuracy|$$argmax[accuracy][:k]$$
