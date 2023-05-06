@@ -1,0 +1,9 @@
+<a href="https://www.kaggle.com/code/ayushs9020/linear-regression-from-scratch-derivation#5-|-Sources"><img src = "https://cdn.iconscout.com/icon/free/png-256/free-kaggle-3521526-2945029.png" width = 50>
+
+# Linear Regression
+
+Linear regression is a fundamental and widely used statistical technique in machine learning (ML) and data analysis. It is used to model the relationship between a dependent variable and one or more independent variables. The goal of linear regression is to find the best-fit line or hyperplane that minimizes the difference between the predicted values and the actual values of the dependent variable. In simple linear regression, there is only one independent variable, while in multiple linear regression, there are multiple independent variables. The dependent variable is assumed to have a linear relationship with the independent variables. Linear regression assumes that the residuals (the differences between the predicted and actual values) are normally distributed and have constant variance.
+
+Linear regression can be used for various purposes, including prediction, inference, and understanding the relationship between variables. It is widely applied in fields such as economics, finance, social sciences, and engineering. Additionally, it serves as the foundation for more complex regression techniques and is often used as a benchmark for evaluating the performance of other ML models. While linear regression is a powerful tool, it has certain assumptions and limitations. It assumes a linear relationship between the variables and may not be suitable for modeling complex non-linear relationships. Additionally, it is sensitive to outliers and can be affected by multicollinearity (high correlation) among the independent variables.
+ 
+ $$\beta = [(X^TX)^{-1}]^TX^TY$
