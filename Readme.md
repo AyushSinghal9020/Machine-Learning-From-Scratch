@@ -1,4 +1,8 @@
 This repo is an attempt to make machine learning more grounded. Starting with basics and creating advanced level mathamatical algorithms , understanding the mathematics behing these models in deep, not just making them, but trying to invent them again is the motive behind this repo
+
+The repository is divided into different folders, each of which contains code for a different algorithm. The algorithms are implemented in a modular way, so that they can be easily reused for other projects.
+
+The repository also includes a number of Jupyter notebooks that demonstrate how to use the code. The notebooks provide step-by-step instructions on how to implement the algorithms and how to use them to train and evaluate machine learning models.
 |____________|_____________________||________________________||
 |---|---|---|---|---
 |Models|Trees|Decision Trees|
